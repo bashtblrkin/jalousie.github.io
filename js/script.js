@@ -29,12 +29,10 @@ $(document).ready(function(){
             $('.header__burger').toggleClass('active');
             document.querySelector('.header__menu').style.top = margin__top; 
             checkPopup = checkPopup == false ? true : false;            
-            console.log('checkPopup: ', checkPopup);
         } else {
             $('.header__burger').toggleClass('active');
             document.querySelector('.header__menu').style.top = '-100%'; 
             checkPopup = checkPopup == false ? true : false;            
-            console.log('checkPopup: ', checkPopup);
         }
         $('body').toggleClass('lock');
     }); 
@@ -43,7 +41,6 @@ $(document).ready(function(){
         document.querySelector('.header__menu').style.top = '-100%'; 
         $('body').removeClass('lock');
         checkPopup = checkPopup == false ? true : false;    
-        console.log('checkPopup: ', checkPopup);
     });
 });
 
