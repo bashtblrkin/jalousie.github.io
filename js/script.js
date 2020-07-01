@@ -107,6 +107,7 @@ function popupOpen(curentPopup, popupTitle = '', popupImg = '') {
         }
         bodyLock();
         curentPopup.classList.add('open');
+        document.querySelector('.nav').style.display = 'none';
         curentPopup.addEventListener('click', function(e) {
             if (!e.target.closest('.popup__content')) {
                 const targetClose = e.target.closest('.popup') ? e.target.closest('.popup') : e.target.closest('.popup_dynamic');
@@ -124,7 +125,10 @@ function popupClose(popupActive, doUnlock = true) {
         }
     } 
     setTimeout(function () {
-        $('.popup__slider').slick('unslick');
+        document.querySelector('.nav').style.display = 'block';
+        if (popupActive.className == 'popup_dynamic') {
+            $('.popup__slider').slick('unslick');
+        }
     }, timeout);   
 }
 
